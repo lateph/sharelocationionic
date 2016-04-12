@@ -1,0 +1,32 @@
+<ion-view title="Share Location">
+    <ion-content style="height: 100%">
+
+        <div>
+            <form ng-submit="search()">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="model.keyword">
+                </label>
+            </form>                
+
+            <div id="map" options="mapOptions" map>
+
+            </div>
+
+        </div>
+
+        
+        <ion-scroll style="height: 200px">
+            <div class="list"  collection-repeat="palace in mapOptions.palaces">
+
+                <a class="item item-avatar" href="#">
+                  <img ng-src="{{palace.myImages}}">
+                  <h2>{{palace.name}}</h2>
+                  <p>Back off, man. I'm a scientist.</p>
+                </a>
+            </div>
+        </ion-scroll>
+        
+
+    </ion-content>
+</ion-view>

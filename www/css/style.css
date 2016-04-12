@@ -1,0 +1,15 @@
+/* Empty. Add your own CSS if you like */
+#map{
+    width:100%;
+    height: calc(100% - 47px);
+}
+.slected-circle {
+	width: 15px;
+	height: 15px;
+	background: red;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: 3px;
+	margin-left: 5px;
+}

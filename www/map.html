@@ -1,0 +1,42 @@
+<ion-view title="Share Location">
+    <ion-content style="height: 100%">
+
+        <div  style="height:50vh">
+            <form ng-submit="search()">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="model.keyword">
+                </label>
+            </form>                
+
+            <div id="map" options="mapOptions" map>
+
+            </div>
+
+        </div>
+
+        
+        <div style="height: calc(50vh - 44px);">
+            <div class="list" style="margin-bottom: 0">
+                <a class="item item-avatar" ng-click="sendCurrentLocation()">
+                  <img ng-src="{{palace.myImages}}">
+                  <h2>Send your current location</h2>
+                  <p>Accurate to {{model.accuracy}} meters</p>
+                </a>
+            </div>
+            <ion-scroll style="height: calc(50vh - 105px)"  delegate-handle="palaceScroll">
+                <div class="list">
+                    <a class="item item-avatar"  ng-repeat="palace in mapOptions.palaces" id="palace-{{palace.id}}" ng-click="sendPalace(palace)">
+                      <img ng-src="{{palace.myImages}}">
+                      <h2 style="float:left">{{palace.name}}</h2>
+                      <div class="slected-circle" ng-show="palace.id == mapOptions.selectedId" style="float:left"></div>
+                      <div style="clear:both"></div>
+                      <p>{{palace.vicinity}}.</p>
+                    </a>
+                </div>
+            </ion-scroll>
+        </div>
+        
+
+    </ion-content>
+</ion-view>
